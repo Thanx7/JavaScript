@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<script>
+
+var person = {
+    firstName:"John",
+    lastName:"Doe",
+    age:50,
+    eyeColor:"blue"
+};
+
+var go = function () {
+ return this.firstName + ": " + this.age;
+};
+
+document.write(go.call(person));
+
+</script>
+</head>
+
+<body>
+</body></html>
