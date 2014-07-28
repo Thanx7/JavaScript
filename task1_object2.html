@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>task1</title>
+<script>
+
+//the same functionality using the “prototype”
+//and a function constructor (calling it with the new operator)
+
+//Define a functional object to hold persons in JavaScript
+var Person = function (name, age) {
+	this.name = name;
+	this.age = age;
+	this.x = 0;
+	this.y = 0;
+};
+
+//Add dynamically to the already defined object a new getters
+Person.prototype.getName = function() {
+    return this.name;
+};
+
+Person.prototype.getAge = function() {
+    return this.age;
+};
+
+//Add dynamically to the already defined object a new method
+Person.prototype.go = function(x, y) {
+    this.x += x;
+    this.y += y;
+    document.write("Person moved." + '<br>');
+};
+
+var john = new Person('John', 50);
+
+document.write(str(john.name, john.age, john.x, john.y) + '<br>');
+john.go(7, 77);
+document.write(str(john.name, john.age, john.x, john.y));
+
+function str(name, age, x, y) {
+	return "name:" + name + ", age:" + age + ", x:" + x + ", y:" + y;
+}
+
+</script>
+</head>
+
+<body>
+</body></html>

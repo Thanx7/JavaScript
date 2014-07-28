@@ -1,0 +1,4 @@
+object2.html:
+
+How does JavaScript .prototype work?
+http://stackoverflow.com/questions/572897/how-does-javascript-prototype-work
