@@ -1,15 +1,3 @@
-a {
-  text-decoration: none;
-  width: 100%;
-  height: 100%;
-  color: #313131;
-}
-
-a:hover {
-  color: #1f45fc;
-  text-decoration: underline;
-}
-
 .navigation {
   list-style: none;
   padding: 5px 0 0 0;
@@ -18,17 +6,16 @@ a:hover {
   margin: 20px auto;
   background-color: #c4e8ff;
   position: relative;
-}
-
-.navigation, .navigation a.main {
+  cursor: pointer;
   border-radius: 4px;
 }
 
-.navigation:hover, .navigation:hover a.main {
+.navigation:hover {
   border-radius: 4px 4px 0 0;
 }
 
-.navigation a.main {
+.navigation #topMenuName,
+.navigation #bottomMenuName {
   display: block;
   height: 25px;
   font-family: Arial, sans-serif;
@@ -38,17 +25,41 @@ a:hover {
   color: #2a6496;
 }
 
-.navigation:hover a.main {
+.navigation #topMenuName {
+}
+
+.navigation #bottomMenuName {
+  line-height: 25px;
+  vertical-align: bottom;
+}
+
+.navigation:hover #topMenuName,
+.navigation:hover #bottomMenuName {
+  color: rgba(42,100,150,0.3);
+}
+
+.navigation a {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
   color: #1f45fc;
 }
 
-.navigation li { 
+.navigation a:hover {
+  text-decoration: underline;
+}
+
+.navigation li {
   width: 250px; 
   height: 18px;
   font-family: Arial, sans-serif;
   font-size: 12px;
   text-align: center;
   margin: 0;
+}
+
+.navigation li a {
+  display: block;
 }
 
 .navigation li:nth-child(even) {
@@ -66,4 +77,14 @@ a:hover {
 
 .triangle {
   font-size: 9px;
+}
+
+#bottomMenu,
+#bottomMenu li,
+#bottomMenuName {
+  -webkit-transform: rotate(180deg);  
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
