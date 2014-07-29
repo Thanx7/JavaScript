@@ -6,7 +6,7 @@
   margin: 20px auto;
   background-color: #c4e8ff;
   position: relative;
-  cursor: pointer;
+  cursor: default;
   border-radius: 4px;
 }
 
@@ -43,23 +43,28 @@
   width: 100%;
   height: 100%;
   color: #1f45fc;
+  display: block;
 }
 
 .navigation a:hover {
   text-decoration: underline;
 }
 
-.navigation li {
+#topMenu li,
+#bottomMenu li {
+  cursor: pointer;
   width: 250px; 
   height: 18px;
+  line-height: 20px;
   font-family: Arial, sans-serif;
   font-size: 12px;
   text-align: center;
-  margin: 0;
+  display: block;
 }
 
-.navigation li a {
-  display: block;
+/* removing the space between li elements after transform: rotate(180deg) */
+#bottomMenu li {
+    margin-top: -1px;
 }
 
 .navigation li:nth-child(even) {
@@ -70,9 +75,14 @@
   background: #e8e8e8;
 }
 
-.navigation li:last-child {
+#topMenu li:last-child {
   background: #c4e8ff;
   border-radius: 0 0 4px 4px;
+}
+
+#bottomMenu li:last-child {
+  background: #c4e8ff;
+  border-radius: 4px 4px 0 0;
 }
 
 .triangle {
