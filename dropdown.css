@@ -1,9 +1,9 @@
 .navigation {
   list-style: none;
-  padding: 5px 0 0 0;
-  width: 250px; 
-  height: 25px; 
+  width: 250px;
+  height: 30px;
   margin: 20px auto;
+  padding: 0;
   background-color: #c4e8ff;
   position: relative;
   cursor: default;
@@ -17,7 +17,7 @@
 .navigation #topMenuName,
 .navigation #bottomMenuName {
   display: block;
-  height: 25px;
+  height: 30px;
   font-family: Arial, sans-serif;
   font-size: 15px;
   text-align: center;
@@ -26,6 +26,8 @@
 }
 
 .navigation #topMenuName {
+  line-height: 25px;
+  vertical-align: bottom;
 }
 
 .navigation #bottomMenuName {
@@ -35,7 +37,7 @@
 
 .navigation:hover #topMenuName,
 .navigation:hover #bottomMenuName {
-  color: rgba(42,100,150,0.3);
+  color: rgba(42,100,150,0.5);
 }
 
 .navigation a {
