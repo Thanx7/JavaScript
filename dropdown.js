@@ -1,7 +1,7 @@
 function MenuWriter () {
 	var topList = document.getElementById("topMenu");
 	var topListItems = topList.getElementsByTagName("li");
-	var bottomList = document.getElementById("bottomMenu");
+	var bottomList = document.getElementById("innerList");
 	var bottomListItems = bottomList.getElementsByTagName("li");
 	var counter = 0;
 	var liInterval;
@@ -12,8 +12,9 @@ function MenuWriter () {
 			counter++;
 			if (counter === topListItems.length) {
 		        clearInterval(liInterval);
+		        $( "#topMenu" ).animate({opacity:'0.7'}, 4000);
 		    }
-		}, 20);
+		}, 30);
 	});
 
 	$( "#bottomMenu" ).mouseenter(function() {
@@ -22,8 +23,9 @@ function MenuWriter () {
 			counter++;
 			if (counter === bottomListItems.length) {
 		        clearInterval(liInterval);
+		        $( "#bottomMenu" ).animate({opacity:'0.7'}, 4000);
 		    }
-		}, 20);
+		}, 30);
 	});
 
 	$( "#topMenu" ).mouseleave(function() {
@@ -32,6 +34,8 @@ function MenuWriter () {
 		}			
 		counter = 0;
 		clearInterval(liInterval);
+		$( "#topMenu" ).finish();
+		$( "#topMenu" ).animate({opacity: 1}, 0);
 	});
 
 	$( "#bottomMenu" ).mouseleave(function() {
@@ -40,6 +44,8 @@ function MenuWriter () {
 		}			
 		counter = 0;
 		clearInterval(liInterval);
+		$( "#bottomMenu" ).finish();
+		$( "#bottomMenu" ).animate({opacity: 1}, 0);		
 	});
 }
 

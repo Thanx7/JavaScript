@@ -10,8 +10,12 @@
   border-radius: 4px;
 }
 
-.navigation:hover {
+#topMenu:hover  {
   border-radius: 4px 4px 0 0;
+}
+
+#bottomMenu:hover  {
+  border-radius: 0 0 4px 4px;
 }
 
 .navigation #topMenuName,
@@ -53,7 +57,7 @@
 }
 
 #topMenu li,
-#bottomMenu li {
+#innerList li {
   width: 250px; 
   height: 18px;
   line-height: 20px;
@@ -63,9 +67,10 @@
   display: none;
 }
 
-/* removing the space between li elements after transform: rotate(180deg) */
-#bottomMenu li {
-    margin-top: -1px;
+#innerList {
+   position: absolute;
+   bottom: 30px;
+   padding: 0;
 }
 
 .navigation li:nth-child(even) {
@@ -73,7 +78,6 @@
 }
 
 .navigation li:nth-child(odd) {
-  /* background: #e8e8e8; */
   background: #ffffff;
 }
 
@@ -82,21 +86,11 @@
   border-radius: 0 0 4px 4px;
 }
 
-#bottomMenu li:last-child {
+#innerList li:first-child {
   background: #c4e8ff;
   border-radius: 4px 4px 0 0;
 }
 
 .triangle {
   font-size: 9px;
-}
-
-#bottomMenu,
-#bottomMenu li,
-#bottomMenuName {
-  -webkit-transform: rotate(180deg);  
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
 }
