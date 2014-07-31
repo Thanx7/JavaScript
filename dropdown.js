@@ -1,19 +1,3 @@
-document.onreadystatechange = function () {
-	if (document.readyState == "complete") {
-		var topList = document.getElementById("topMenu");
-		var topListItems = topList.getElementsByTagName("li");
-		for (var i = 0; i < topListItems.length; ++i) {
-			topListItems[i].style.display = "none";
-		}
-
-		var bottomList = document.getElementById("bottomMenu");
-		var bottomListItems = bottomList.getElementsByTagName("li");
-		for (var i = 0; i < bottomListItems.length; ++i) {
-			bottomListItems[i].style.display = "none";
-		}
-	}
-}
-
 function MenuWriter () {
 	var topList = document.getElementById("topMenu");
 	var topListItems = topList.getElementsByTagName("li");
@@ -59,6 +43,6 @@ function MenuWriter () {
 	});
 }
 
-onload = function() {
-	var topMenu = new MenuWriter();
-};
+document.addEventListener("DOMContentLoaded", function(event) {
+	var navigation = new MenuWriter();
+});

@@ -2,7 +2,7 @@
   list-style: none;
   width: 250px;
   height: 30px;
-  margin: 20px auto;
+  margin: 10px auto;
   padding: 0;
   background-color: #c4e8ff;
   position: relative;
@@ -54,14 +54,13 @@
 
 #topMenu li,
 #bottomMenu li {
-  cursor: pointer;
   width: 250px; 
   height: 18px;
   line-height: 20px;
   font-family: Arial, sans-serif;
   font-size: 12px;
   text-align: center;
-  display: block;
+  display: none;
 }
 
 /* removing the space between li elements after transform: rotate(180deg) */
@@ -74,7 +73,8 @@
 }
 
 .navigation li:nth-child(odd) {
-  background: #e8e8e8;
+  /* background: #e8e8e8; */
+  background: #ffffff;
 }
 
 #topMenu li:last-child {
