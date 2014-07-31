@@ -8,14 +8,17 @@
   position: relative;
   cursor: default;
   border-radius: 4px;
+  box-shadow: 4px 4px 4px #cccccc;
 }
 
 #topMenu:hover  {
   border-radius: 4px 4px 0 0;
+  box-shadow: none;
 }
 
 #bottomMenu:hover  {
   border-radius: 0 0 4px 4px;
+  box-shadow: none;
 }
 
 .navigation #topMenuName,
@@ -68,9 +71,9 @@
 }
 
 #innerList {
-   position: absolute;
-   bottom: 30px;
-   padding: 0;
+  position: absolute;
+  bottom: 30px;
+  padding: 0;
 }
 
 .navigation li:nth-child(even) {
