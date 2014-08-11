@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>task3bind</title>
+<script>
+
+//For example, you have a function to deduct monthly club fees
+function getMontlhlyFee(fee){
+  var remaining = this.total - fee;
+  this.total = remaining;
+  return;
+}
+
+//Now you want to reuse this function for different club member. Note that monthly fee will vary from member to member.
+
+//Let's Rachel has a balance of 500 and monthly membership fee is 90.
+var rachel = {name:'Rachel Green', total:500};
+
+//Now, create a function that can be used again and again to take out fee from her account every month
+
+//bind
+var getRachelFee = getMontlhlyFee.bind(rachel, 90);
+//deduct
+getRachelFee();//Rachel Green remaining balance:410
+getRachelFee();//Rachel Green remaining balance:320
+
+//Now same getMonthlyFee function could be used for another member with different membership fee. For Example, Ross Geller has 250 balance and monthly fee 25
+var ross = {name:'Ross Geller', total:250};
+//bind
+var getRossFee = getMontlhlyFee.bind(ross, 25);
+//deduct
+getRossFee(); //Ross Geller remaining balance:225
+getRossFee(); //Ross Geller remaining balance:200
+
+console.dir(rachel);
+console.dir(ross);
+
+</script>
+</head>
+
+<body></body>
+</html>

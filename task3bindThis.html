@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>task3bindThis</title>
+<script>
+
+function bindThis(fn, o) {
+	return function () {
+		return fn.apply (o, arguments);
+	}
+}
+
+function getMontlhlyFee(fee){
+  var remaining = this.total - fee;
+  this.total = remaining;
+  return;
+}
+
+//Now you want to reuse this function for different club member. Note that monthly fee will vary from member to member. Let's Rachel has a balance of 500 and monthly membership fee is 90.
+var rachel = {name:'Rachel Green', total: 500};
+
+//bind
+var getRachelFee = bindThis(getMontlhlyFee, rachel);
+//deduct
+getRachelFee(90);//Rachel Green remaining balance:410
+getRachelFee(90);//Rachel Green remaining balance:320
+
+//Now same getMonthlyFee function could be used for another member with different membership fee. For Example, Ross Geller has 250 balance and monthly fee 25
+var ross = {name:'Ross Geller', total: 250};
+//bind
+var getRossFee = bindThis(getMontlhlyFee, ross);
+//deduct
+getRossFee(25); //Ross Geller remaining balance:225
+getRossFee(25); //Ross Geller remaining balance:200
+
+console.dir(rachel);
+console.dir(ross);
+
+</script>
+</head>
+
+<body></body>
+</html>
